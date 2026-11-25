@@ -7,16 +7,16 @@
 // competition's gate (UTF-8 text, 1 to 200 characters, not only
 // whitespace) and writes it out.
 //
-// The roast: my fridge's ice maker retired in 2019, its light only shows
-// up when it feels like it, and the coldest thing in it is my
+// The roast: my fridge's ice maker retired in 2019, its light only clocks
+// in when it feels like it, and the coldest thing in it is my
 // disappointment.
 
 import * as fs from "node:fs";
 import * as path from "node:path";
 
-// The entry: one line, 135 characters, roasting my fridge.
+// The entry: one line, 136 characters, roasting my fridge.
 const ENTRY =
-  "My fridge's ice maker retired in 2019, its light only shows up when it feels like it, and the coldest thing in it is my disappointment.";
+  "My fridge's ice maker retired in 2019, its light only clocks in when it feels like it, and the coldest thing in it is my disappointment.";
 
 const OUT_DIR = "/output";
 const OUT_FILE = path.join(OUT_DIR, "entry.txt");
@@ -34,7 +34,7 @@ function main(): void {
 
   fs.mkdirSync(OUT_DIR, { recursive: true });
   // Written with no trailing newline: the file is exactly the line,
-  // 135 characters, so the gate and the judge both see only the line.
+  // 136 characters, so the gate and the judge both see only the line.
   fs.writeFileSync(OUT_FILE, ENTRY, "utf8");
 }
 
